@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #1d1d1b;
+    margin: 0 20px 0;
+}
+
+/*NAV*/
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    
+}
+  
+.logo-container {
+    margin-right: 10px;
+}
+  
+.logo {
+    width: 40px;
+    height: 40px;
+}
+  
+.title-container {
+    flex-grow: 1;
+    text-align: center;
+}
+  
+.login-container {
+    margin-left: auto;
+}
+  
+a {
+    color: #fef200;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+  
+/*Profile pic*/
+  
+.profile {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+  
+.app img.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+  
+/*Upload pic*/
+
+.upload {
+    margin-bottom: 20px;
+}
+.app img.upload-image {
+    width: 100px;
+    height: 100px;
+}
+
+.app img.upload-image {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    margin-bottom: 10px;
+    border: 1px dashed #fef200;;
+    padding: 10px;
+    object-fit: cover;
+}
+
+ /*would consider more media queries for responsivenss across all devices
+  if i had more time, currently i have been styling with mobile
+  considerations */
+@media (max-width: 576px) {
+    .app img.profile-image {
+        width: 60px;
+        height: 60px;
+    }
+  
+    .app img.upload-image {
+        padding-bottom: 6px 0 6px 0;
+        width:450px;
+        height: 450px;
+    } 
+}
+   
+ /*CAPTION*/
+.caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.caption-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+  
+.username {
+    font-weight: bold;
+    color: #fef200;
+}
+  
+.description {
+    font-size: 14px;
+    color: #fff;
+}
+  
+.likes {
+    font-size: 12px;
+    text-align: right;
+    color: #fff;
+}
+  
+/*FORM*/
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+  
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+  
+.form-container input[type="range"] {
+    width: 100%;
+}
+  
+.form-container button {
+    padding: 10px 20px;
+    background-color: #fef200;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+  
+.error-message {
+    color: #ff5151;
+    margin-bottom: 10px;
+}
+  
