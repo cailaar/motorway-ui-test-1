@@ -2,10 +2,19 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./navbar";
 import Form from "./form";
+import Modal from "./modal";
 
 const App = () => {
   const [images, setImages] = useState();
+  const [selectedUser, setSelectedUser] = useState(null);
 
+  const openModal = (user) => {
+    setSelectedUser(user);
+  };
+
+  const closeModal = () => {
+    setSelectedUser(null);
+  };
   //I am implementing caching to speed up the response of the website
   useEffect(() => {
     const fetchData = async () => {
@@ -43,8 +52,14 @@ const App = () => {
               <img
                 src={`${img.user.profile_image}.webp`}
                 alt=""
-                className="profile-image"
+                className={`profile-image ${
+                  selectedUser === img.user ? "bordered" : ""
+                }`}
+                onClick={() => openModal(img.user)}
               />
+              <p className="username-pic">
+                <a href="#">{img.user.username}</a>
+              </p>
             </div>
             <div className="image-wrapper upload">
               <img src={`${img.url}.jpg`} alt="" className="upload-image" />
@@ -56,8 +71,11 @@ const App = () => {
               </div>
             </div>
             <p className="likes">{img.likes} likes</p>
+            <hr />
           </div>
         ))}
+
+      {selectedUser && <Modal user={selectedUser} onClose={closeModal} />}
       <Form />
     </div>
   );
