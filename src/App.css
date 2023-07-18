@@ -227,6 +227,7 @@ a {
 .profile-image.bordered {
     border: 2px solid #fef200;
     border-radius: 50%;
+    cursor: pointer;
 }
   
   
